@@ -22,7 +22,9 @@ while True:
 
     def answer(n):
         while n.lower() not in validacion:
-            n = str(input("error dame una respuesta valida (a-b-c-d)\n"))
+            #STR esta de mas
+            n = input("error dame una respuesta valida (a-b-c)\n")
+        return n.lower()
 
     print("Bienvenido a la trivia de capitales, disfruta mi juego")
     time.sleep(4)
@@ -34,18 +36,18 @@ while True:
         for element in answersqu[vuelta]:
             print(element)
         res = str(input("\n"))
-        answer(res)
+        res = answer(res)
 
-        if res.lower() == "admin":
+        if res == "admin":
             scoreQ += random.randint(1, 550)
             print("saludos mi general, respuesta correcta.\n")
-        elif res.lower() not in CorretAnswers[vuelta]:
+        elif res not in CorretAnswers[vuelta]:
             if scoreQ >= 0:
                 scoreQ -= random.randint(150, 370)
             else:
                 scoreQ = scoreQ
             print("\nQue mal, respuesta incorrecta")
-        elif res.lower() in CorretAnswers[vuelta]:
+        elif res in CorretAnswers[vuelta]:
             scoreQ += random.randint(120, 141)
             print("\nfelicidades acertaste en la respuesta!")
         else:
