@@ -60,7 +60,7 @@ while True:
     ruleta = str(input("\ndeseas probar nuestra ruleta de puntos? Y/N : "))
     if ruleta.upper() == "Y":
         print(
-            "tu score sera actualizado por nuestra ruleta entre 0 y poco mas de 1000 puntos\n"
+            "tu score sera actualizado por nuestra ruleta entre 0 y poco mas de 10 puntos\n"
         )
         score = random.randint(0, 10 + score)
         time.sleep(7)
