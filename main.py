@@ -16,13 +16,12 @@ while True:
                  ["A) Ghana", "B) Viena", "C) Estocolmo"],
                  ["A) Uruguay", "B) Defuncion", "C) Asuncion"]]
     ScoreAnswer = []
-    score = 50
+    score = 5
     vuelta = 0
     validacion = ("a", "b", "c", "d", "admin")
 
     def answer(n):
         while n.lower() not in validacion:
-            #STR esta de mas
             n = input("error dame una respuesta valida (a-b-c)\n")
         return n.lower()
 
@@ -39,16 +38,16 @@ while True:
         res = answer(res)
 
         if res == "admin":
-            scoreQ += random.randint(1, 550)
+            scoreQ += random.randint(1, 5)
             print("saludos mi general, respuesta correcta.\n")
         elif res not in CorretAnswers[vuelta]:
             if scoreQ >= 0:
-                scoreQ -= random.randint(150, 370)
+                scoreQ -= random.randint(1, 3)
             else:
                 scoreQ = scoreQ
             print("\nQue mal, respuesta incorrecta")
         elif res in CorretAnswers[vuelta]:
-            scoreQ += random.randint(120, 141)
+            scoreQ += random.randint(1, 4)
             print("\nfelicidades acertaste en la respuesta!")
         else:
             print("\nha ocurrido un error, contacte con soporte al usuario\n")
@@ -63,7 +62,7 @@ while True:
         print(
             "tu score sera actualizado por nuestra ruleta entre 0 y poco mas de 1000 puntos\n"
         )
-        score = random.randint(0, 1000 + score)
+        score = random.randint(0, 10 + score)
         time.sleep(7)
 
     print(f"tu score por pregunta fue: {ScoreAnswer}")
